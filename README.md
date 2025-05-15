@@ -59,7 +59,7 @@ Pour ce projet, nous avons mis en place plusieurs fonctionnalités :
 > Le projet Subnauticanimal est conçu par deux étudiants passionnés par le développement web et l’écologie marine dans le cadre de leur formation à l'EFREI PARIS :  
 >
 - **[Arthur Hacques](https://www.linkedin.com/in/arthur-hacques-56190b251/)**  
-- **[Lucie Le Saux](https://www.linkedin.com/in/)** *(ajoutez Lucie)
+- **[Lucie Le Saux](https://www.linkedin.com/in/lucie-le-saux-26791a1bb/)**
 
 > N'hésitez pas à nous contacter via GitHub ou LinkedIn !
 
