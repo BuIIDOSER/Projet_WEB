@@ -86,7 +86,7 @@ body {
 
 /* Image d'écosystème de petite taille */
 .ecosystem-img {
-    max-height: 4rem;
+    max-height: 5rem;
     max-width: 100%;
     object-fit: contain;
 }
@@ -102,20 +102,23 @@ body {
 /* ============================= */
 /*       Grille des écosystèmes   */
 .ecosystem-grid {
-    display: flex;                  /* Utilisation de flex pour un centrage parfait */
-    justify-content: center;        /* Centrer les cartes horizontalement */
-    align-items: center;            /* Centrer verticalement si nécessaire */
-    gap: 2rem;                      /* Espacement entre les cartes */
-    flex-wrap: wrap;                /* Permet d'aller à la ligne si nécessaire */
-    max-width: 100%;                /* Prendre toute la largeur possible */
-    margin: 0 auto;                 /* Centre la grille dans la page */
+    display: flex;
+    justify-content: center;
+    align-items: stretch;  /* Étendre la hauteur des cartes pour un alignement uniforme */
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin: 0 auto;
 }
+
 
 /* Cartes individuelles */
 .card {
-    flex: 1 1 300px;                /* Les cartes prennent une place flexible */
+    flex: 1 1 320px;                /* Largeur de base fixe pour uniformiser */
     max-width: 350px;               /* Largeur maximale des cartes */
+    min-width: 320px;               /* Largeur minimale pour éviter le rétrécissement */
     margin: 1rem;                   /* Espacement autour des cartes */
+    box-sizing: border-box;         /* Inclure les marges et les bordures */
 }
 
 /* ============================= */

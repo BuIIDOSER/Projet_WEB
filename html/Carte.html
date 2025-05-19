@@ -15,14 +15,7 @@
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-2">
                 <!-- Logo -->
-                <svg class="w-10 h-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="45" fill="#0ea5e9"/>
-                    <path d="M65,40 C72,45 72,55 65,60 C75,58 82,50 80,40 C78,30 70,25 65,40 Z" fill="#0c4a6e"/>
-                    <path d="M30,45 C25,48 25,52 30,55 C20,53 15,48 18,42 C21,36 25,33 30,45 Z" fill="#0c4a6e"/>
-                    <path d="M50,30 C65,30 75,40 75,50 C75,60 65,70 50,70 C35,70 25,60 25,50 C25,40 35,30 50,30 Z" fill="#0c4a6e"/>
-                    <circle cx="60" cy="45" r="3" fill="white"/>
-                    <path d="M40,55 C45,60 55,60 60,55" stroke="white" stroke-width="2" fill="none"/>
-                </svg>
+                <img src="../images_WEB/logo.jpg" alt="Logo Subnauticanimal" class="w-12 h-12">
                 <span class="text-2xl font-bold text-sky-600">Subnauticanimal</span>
             </div>
             <nav class="hidden md:flex space-x-8">
@@ -126,14 +119,12 @@
         <!-- Section Outre-mer -->
         <section id="outremer">
             <h2 class="text-3xl font-bold text-sky-800 mb-6">Territoires d'Outre-mer</h2>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Guadeloupe -->
                 <div class="outremer-card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="h-40 bg-sky-600 flex items-center justify-center">
-                        <svg class="w-24 h-24 text-white" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M50,20 C65,20 75,30 75,45 C75,60 65,70 50,70 C35,70 25,60 25,45 C25,30 35,20 50,20 Z M40,45 C40,50 45,55 50,55 C55,55 60,50 60,45 C60,40 55,35 50,35 C45,35 40,40 40,45 Z"/>
-                        </svg>
+                    <div class="flex items-center justify-center">
+                        <img src="../images_WEB/guadeloupe.jpg" alt="Guadeloupe" class="h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2 text-sky-800">Guadeloupe</h3>
@@ -141,13 +132,11 @@
                         <button class="text-sky-600 font-medium hover:text-sky-800" onclick="showOutremerInfo('guadeloupe')">En savoir plus →</button>
                     </div>
                 </div>
-                
+
                 <!-- Martinique -->
                 <div class="outremer-card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="h-40 bg-sky-500 flex items-center justify-center">
-                        <svg class="w-24 h-24 text-white" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M30,20 L70,20 L70,80 L30,80 Z M40,30 L40,70 L60,70 L60,30 Z"/>
-                        </svg>
+                    <div class="flex items-center justify-center">
+                        <img src="../images_WEB/martinique.jpg" alt="Martinique" class="h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2 text-sky-800">Martinique</h3>
@@ -155,13 +144,11 @@
                         <button class="text-sky-600 font-medium hover:text-sky-800" onclick="showOutremerInfo('martinique')">En savoir plus →</button>
                     </div>
                 </div>
-                
+
                 <!-- Guyane -->
                 <div class="outremer-card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="h-40 bg-sky-700 flex items-center justify-center">
-                        <svg class="w-24 h-24 text-white" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20,20 L80,20 L80,80 L20,80 Z M30,30 L30,70 L70,70 L70,30 Z"/>
-                        </svg>
+                    <div class="flex items-center justify-center">
+                        <img src="../images_WEB/guyane.jpg" alt="Guyane" class="h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2 text-sky-800">Guyane</h3>
@@ -169,13 +156,11 @@
                         <button class="text-sky-600 font-medium hover:text-sky-800" onclick="showOutremerInfo('guyane')">En savoir plus →</button>
                     </div>
                 </div>
-                
+
                 <!-- La Réunion -->
                 <div class="outremer-card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="h-40 bg-sky-600 flex items-center justify-center">
-                        <svg class="w-24 h-24 text-white" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="50" cy="50" r="30"/>
-                        </svg>
+                    <div class="flex items-center justify-center">
+                        <img src="../images_WEB/reunion.jpg" alt="La Réunion" class="h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2 text-sky-800">La Réunion</h3>
@@ -183,14 +168,11 @@
                         <button class="text-sky-600 font-medium hover:text-sky-800" onclick="showOutremerInfo('reunion')">En savoir plus →</button>
                     </div>
                 </div>
-                
+
                 <!-- Mayotte -->
                 <div class="outremer-card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="h-40 bg-sky-500 flex items-center justify-center">
-                        <svg class="w-24 h-24 text-white" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="50" cy="50" r="20"/>
-                            <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" stroke-width="5"/>
-                        </svg>
+                    <div class="flex items-center justify-center">
+                        <img src="../images_WEB/mayotte.png" alt="Mayotte" class="h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2 text-sky-800">Mayotte</h3>
@@ -198,17 +180,11 @@
                         <button class="text-sky-600 font-medium hover:text-sky-800" onclick="showOutremerInfo('mayotte')">En savoir plus →</button>
                     </div>
                 </div>
-                
+
                 <!-- Polynésie française -->
                 <div class="outremer-card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="h-40 bg-sky-700 flex items-center justify-center">
-                        <svg class="w-24 h-24 text-white" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="30" cy="30" r="10"/>
-                            <circle cx="70" cy="30" r="10"/>
-                            <circle cx="30" cy="70" r="10"/>
-                            <circle cx="70" cy="70" r="10"/>
-                            <circle cx="50" cy="50" r="10"/>
-                        </svg>
+                    <div class="flex items-center justify-center">
+                        <img src="../images_WEB/polynesie.webp" alt="Polynésie française" class="h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2 text-sky-800">Polynésie française</h3>
@@ -218,6 +194,7 @@
                 </div>
             </div>
         </section>
+
         
         <!-- Modale pour Info Outremer -->
         <div id="outremer-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
