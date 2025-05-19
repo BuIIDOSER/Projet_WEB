@@ -1,0 +1,90 @@
+/* Définition de la police par défaut et couleur de fond de la page */
+body { 
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0f9ff;
+}
+        
+/* Fond dégradé bleu pour les éléments avec la classe wave-bg */
+.wave-bg {
+    background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+}
+
+/* Effet de transition sur les cartes (éléments avec la classe card) */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Lors du survol d'une carte, léger décalage vers le haut et ombre portée */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Marquage de l'élément actif dans la navigation par une bordure inférieure bleue */
+.active-nav {
+    border-bottom: 3px solid #0ea5e9;
+}
+
+/* Transition de couleur et curseur pointer sur les régions de la carte SVG */
+#map-container path {
+    transition: fill 0.3s ease;
+    cursor: pointer;
+}
+
+/* Au survol d'une région de la carte, changement de couleur de remplissage */
+#map-container path:hover {
+    fill: #0ea5e9;
+}     
+
+/* Conteneur pour les menus déroulants : position relative et inline-block */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Contenu du menu déroulant : caché par défaut, fond clair, ombre, et coins arrondis */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 0.375rem;
+}
+
+/* Affichage du menu déroulant lors du survol du parent */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Style des régions sur la carte : couleur de base, bord blanc, transition */
+.region {
+    fill: #93c5fd;
+    stroke: #ffffff;
+    stroke-width: 1;
+    transition: fill 0.3s ease;
+}
+
+/* Changement de couleur au survol d'une région */
+.region:hover {
+    fill: #0ea5e9;
+}
+
+/* Style de la région sélectionnée : bleu plus foncé */
+.region-active {
+    fill: #0369a1;
+}
+
+/* Animation des cartes d’Outre-mer (même effet que les autres cartes) */
+.outremer-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* Effet au survol des cartes d’Outre-mer : décalage et ombre */
+.outremer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
