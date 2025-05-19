@@ -1,32 +1,153 @@
-/* Définition de la police par défaut et couleur de fond de la page */
-body { 
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f0f9ff;
-}
-        
-/* Fond dégradé bleu pour les éléments avec la classe wave-bg */
-.wave-bg {
-    background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+/* ============================= */
+/*      Variables et polices      */
+/* ============================= */
+:root {
+    --primary-color: #0ea5e9;
+    --secondary-color: #0369a1;
+    --light-color: #f0f9ff;
+    --text-color: #4b5563;
+    --hover-color: #0284c7;
+    --font-family: 'Montserrat', sans-serif;
+    --card-bg-color: #ffffff;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.04);
 }
 
-/* Effet de transition sur les cartes (éléments avec la classe card) */
+/* ============================= */
+/*  Définition de la police par défaut et couleur de fond de la page  */
+body { 
+    font-family: var(--font-family);
+    background-color: var(--light-color);
+}
+
+/* ============================= */
+/*     Fond dégradé bleu pour les éléments avec la classe wave-bg     */
+.wave-bg {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
+
+/* ============================= */
+/*         Structure des cartes        */
 .card {
+    background-color: var(--card-bg-color);
+    border-radius: 0.5rem;
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Lors du survol d'une carte, léger décalage vers le haut et ombre portée */
+/* Effet de transition sur les cartes */
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 
-                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 10px 25px -5px var(--shadow-light), 
+                0 10px 10px -5px var(--shadow-dark);
 }
 
-/* Marquage de l'élément actif dans la navigation par une bordure inférieure bleue */
+/* Contenu des cartes (espacement interne) */
+.card-content {
+    padding: 1.5rem;
+}
+
+/* Titre des cartes */
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+/* Texte des cartes */
+.card-text {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+/* Lien dans les cartes */
+.card-link {
+    color: var(--hover-color);
+    font-weight: 500;
+}
+
+.card-link:hover {
+    color: var(--secondary-color);
+}
+
+/* ============================= */
+/*     Incrustation des images des écosystèmes */
+.image-container {
+    max-height: 200px;
+    overflow: hidden;
+}
+
+.ecosystem-img-full {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Image d'écosystème de petite taille */
+.ecosystem-img {
+    max-height: 4rem;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* ============================= */
+/*       Conteneur principal      */
+.container {
+    max-width: 1400px; /* Largeur maximale pour un centrage équilibré */
+    margin: 0 auto;    /* Centrer le conteneur lui-même */
+    padding: 2rem;     /* Espacement interne */
+}
+
+/* ============================= */
+/*       Grille des écosystèmes   */
+.ecosystem-grid {
+    display: flex;                  /* Utilisation de flex pour un centrage parfait */
+    justify-content: center;        /* Centrer les cartes horizontalement */
+    align-items: center;            /* Centrer verticalement si nécessaire */
+    gap: 2rem;                      /* Espacement entre les cartes */
+    flex-wrap: wrap;                /* Permet d'aller à la ligne si nécessaire */
+    max-width: 100%;                /* Prendre toute la largeur possible */
+    margin: 0 auto;                 /* Centre la grille dans la page */
+}
+
+/* Cartes individuelles */
+.card {
+    flex: 1 1 300px;                /* Les cartes prennent une place flexible */
+    max-width: 350px;               /* Largeur maximale des cartes */
+    margin: 1rem;                   /* Espacement autour des cartes */
+}
+
+/* ============================= */
+/*   Titre de section avec centrage et couleur  */
+.section-title {
+    font-size: 1.875rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+}
+
+/* ============================= */
+/*      Marquage de l'élément actif dans la navigation */
 .active-nav {
-    border-bottom: 3px solid #0ea5e9;
+    border-bottom: 3px solid var(--primary-color);
 }
 
-/* Transition de couleur et curseur pointer sur les régions de la carte SVG */
+/* ============================= */
+/*      Animation des cartes d’Outre-mer   */
+.outremer-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.outremer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px var(--shadow-light), 
+                0 10px 10px -5px var(--shadow-dark);
+}
+
+/* ============================= */
+/*   Transition de couleur et curseur pointer sur les régions de la carte SVG */
 #map-container path {
     transition: fill 0.3s ease;
     cursor: pointer;
@@ -34,32 +155,10 @@ body {
 
 /* Au survol d'une région de la carte, changement de couleur de remplissage */
 #map-container path:hover {
-    fill: #0ea5e9;
+    fill: var(--primary-color);
 }     
 
-/* Conteneur pour les menus déroulants : position relative et inline-block */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* Contenu du menu déroulant : caché par défaut, fond clair, ombre, et coins arrondis */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 0.375rem;
-}
-
-/* Affichage du menu déroulant lors du survol du parent */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Style des régions sur la carte : couleur de base, bord blanc, transition */
+/* Style des régions sur la carte */
 .region {
     fill: #93c5fd;
     stroke: #ffffff;
@@ -69,22 +168,33 @@ body {
 
 /* Changement de couleur au survol d'une région */
 .region:hover {
-    fill: #0ea5e9;
+    fill: var(--primary-color);
 }
 
-/* Style de la région sélectionnée : bleu plus foncé */
+/* Style de la région sélectionnée */
 .region-active {
-    fill: #0369a1;
+    fill: var(--secondary-color);
 }
 
-/* Animation des cartes d’Outre-mer (même effet que les autres cartes) */
-.outremer-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+/* ============================= */
+/*   Conteneur pour les menus déroulants  */
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
 
-/* Effet au survol des cartes d’Outre-mer : décalage et ombre */
-.outremer-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 
-                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+/* Contenu du menu déroulant avec fond clair, ombre, et coins arrondis */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px var(--shadow-light);
+    z-index: 1;
+    border-radius: 0.375rem;
+}
+
+/* Affichage du menu déroulant lors du survol du parent */
+.dropdown:hover .dropdown-content {
+    display: block;
 }
