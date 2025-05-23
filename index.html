@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subnauticanimal - Accueil</title>
+    <link rel="stylesheet" href="../css/styleProj1.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+          <!-- Logo -->
+          <img src="../images_WEB/logo.jpg" alt="Logo Subnauticanimal" class="w-12 h-12" />
+          <span class="text-2xl font-bold text-sky-600">Subnauticanimal</span>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+          <a href="#" class="text-sky-800 font-medium py-2 active-nav">Accueil</a>
+          <div class="dropdown">
+            <a href="html/Carte.html" class="text-sky-800 font-medium py-2">Carte</a>
+            <div class="dropdown-content">
+              <a href="html/Carte.html#metropole" class="block px-4 py-2 text-sky-800 hover:bg-sky-100">Métropole</a>
+              <a href="html/Carte.html#outremer" class="block px-4 py-2 text-sky-800 hover:bg-sky-100">Outre-mer</a>
+            </div>
+          </div>
+          <a href="html/Espece.html" class="text-sky-800 font-medium py-2">Espèces</a>
+          <a href="#about" class="text-sky-800 font-medium py-2">À propos</a>
+        </nav>
+        <button class="md:hidden focus:outline-none" id="menu-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 text-sky-800"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <div class="md:hidden hidden bg-white w-full" id="mobile-menu">
+        <div class="px-4 py-2 space-y-1">
+          <a href="#" class="block py-2 text-sky-800 font-medium border-b border-gray-200">Accueil</a>
+          <a href="html/Carte.html" class="block py-2 text-sky-800 font-medium border-b border-gray-200">Carte</a>
+          <a href="html/Espece.html" class="block py-2 text-sky-800 font-medium border-b border-gray-200">Espèces</a>
+          <a href="#about" class="block py-2 text-sky-800 font-medium">À propos</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenu de la page -->
+    <div id="page-content">
+      <!-- Page d'accueil -->
+      <section id="home-page" class="block">
+        <!-- Section Page de garde -->
+        <div class="wave-bg text-white py-20 px-4">
+          <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Découvrez la Biodiversité Aquatique Française</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+              Explorez les richesses marines et d'eau douce de la France métropolitaine et d'outre-mer
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+              <a
+                href="html/Carte.html"
+                class="bg-white text-sky-700 font-bold py-3 px-6 rounded-full hover:bg-sky-50 transition duration-300"
+                >Explorer la carte</a
+              >
+              <a
+                href="html/Espece.html"
+                class="bg-sky-900 text-white font-bold py-3 px-6 rounded-full hover:bg-sky-800 transition duration-300"
+                >Voir les espèces</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Section écosystèmes -->
+        <div class="container">
+          <h2 class="section-title">Découvrez nos écosystèmes aquatiques</h2>
+
+          <div class="ecosystem-grid">
+            <!-- Milieu Marin -->
+            <div class="card">
+              <div class="image-container">
+                <img src="../images_WEB/milieu-marin.jpg" alt="Milieu marin" class="ecosystem-img-full" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Milieu Marin</h3>
+                <p class="card-text">
+                  La France possède le deuxième domaine maritime mondial avec plus de 10 millions de km² répartis sur
+                  tous les océans.
+                </p>
+                <a href="html/Espece.html#marin" class="card-link">Découvrir les espèces marines →</a>
+              </div>
+            </div>
+
+            <!-- Eau Douce -->
+            <div class="card">
+              <div class="image-container">
+                <img src="../images_WEB/eau-douce.jpg" alt="Eau douce" class="ecosystem-img-full" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Eau Douce</h3>
+                <p class="card-text">
+                  Avec plus de 270 000 km de cours d'eau, la France abrite une biodiversité d'eau douce exceptionnelle.
+                </p>
+                <a href="html/Espece.html#douce" class="card-link">Découvrir les espèces d'eau douce →</a>
+              </div>
+            </div>
+
+            <!-- Outre-mer -->
+            <div class="card">
+              <div class="image-container">
+                <img src="../images_WEB/outre-mer.jpg" alt="Outre-mer" class="ecosystem-img-full" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Outre-mer</h3>
+                <p class="card-text">
+                  Les territoires d'outre-mer français abritent des écosystèmes uniques et une biodiversité
+                  exceptionnelle.
+                </p>
+                <a href="html/Carte.html#outremer" class="card-link">Explorer les territoires →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Statut de conservation -->
+        <div class="bg-sky-50 py-16 px-4">
+          <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-sky-900">État de conservation</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="w-16 h-16 bg-red-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <svg
+                    class="w-8 h-8 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-gray-800">En danger critique</h3>
+                <p class="text-gray-600">
+                  Espèces confrontées à un risque extrêmement élevé d'extinction à l'état sauvage.
+                </p>
+              </div>
+
+              <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="w-16 h-16 bg-orange-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <svg
+                    class="w-8 h-8 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-gray-800">Vulnérable</h3>
+                <p class="text-gray-600">Espèces confrontées à un risque élevé d'extinction à l'état sauvage.</p>
+              </div>
+
+              <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="w-16 h-16 bg-green-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <svg
+                    class="w-8 h-8 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-gray-800">Préoccupation mineure</h3>
+                <p class="text-gray-600">Espèces qui ne sont pas menacées d'extinction dans l'immédiat.</p>
+              </div>
+
+              <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="w-16 h-16 bg-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <svg
+                    class="w-8 h-8 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-gray-800">Espèces invasives</h3>
+                <p class="text-gray-600">Espèces introduites qui menacent les écosystèmes et la biodiversité locale.</p>
+              </div>
+            </div>
+
+            <div class="mt-10 text-center">
+              <a
+                href="html/Espece.html"
+                class="inline-block bg-sky-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-700 transition duration-300"
+                >Consulter le tableau des espèces</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Section À propos -->
+        <div id="about" class="container mx-auto py-16 px-4">
+          <h2 class="text-3xl font-bold text-center mb-12 text-sky-900">À propos de nous</h2>
+
+          <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="md:flex">
+              <div class="md:w-1/2 p-8">
+                <h3 class="text-2xl font-bold mb-4 text-sky-800">Notre mission</h3>
+                <p class="text-gray-700 mb-6">
+                  Subnauticanimal a pour mission de sensibiliser le public à la richesse et à la fragilité des
+                  écosystèmes aquatiques français. Nous souhaitons contribuer à la préservation de cette biodiversité
+                  exceptionnelle en partageant des connaissances précises et accessibles.
+                </p>
+                <p class="text-gray-700">
+                  Notre équipe de passionnés travaille à documenter les espèces aquatiques de France métropolitaine et
+                  d'outre-mer, leur habitat et leur statut de conservation.
+                </p>
+              </div>
+              <div class="md:w-1/2 bg-sky-100 p-8">
+                <h3 class="text-2xl font-bold mb-4 text-sky-800">Notre équipe</h3>
+
+                <div class="mb-6">
+                  <div class="flex items-center mb-2">
+                    <div
+                      class="w-12 h-12 bg-sky-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4"
+                    >
+                      AH
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-gray-800">Arthur Hacques</h4>
+                      <a
+                        href="https://www.linkedin.com/in/arthur-hacques-56190b251/"
+                        target="_blank"
+                        class="text-sky-600 hover:text-sky-800 flex items-center"
+                      >
+                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                          <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                          />
+                        </svg>
+                        LinkedIn
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex items-center mb-2">
+                    <div
+                      class="w-12 h-12 bg-sky-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4"
+                    >
+                      LS
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-gray-800">Lucie Le Saux</h4>
+                      <a
+                        href="https://www.linkedin.com/in/lucie-le-saux-26791a1bb/"
+                        target="_blank"
+                        class="text-sky-600 hover:text-sky-800 flex items-center"
+                      >
+                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                          <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                          />
+                        </svg>
+                        LinkedIn
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-sky-900 text-white py-10">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between">
+          <div class="mb-6 md:mb-0">
+            <div class="flex items-center space-x-2 mb-4">
+              <svg class="w-8 h-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="45" fill="#0ea5e9" />
+                <path d="M65,40 C72,45 72,55 65,60 C75,58 82,50 80,40 C78,30 70,25 65,40 Z" fill="#0c4a6e" />
+                <path d="M30,45 C25,48 25,52 30,55 C20,53 15,48 18,42 C21,36 25,33 30,45 Z" fill="#0c4a6e" />
+                <path
+                  d="M50,30 C65,30 75,40 75,50 C75,60 65,70 50,70 C35,70 25,60 25,50 C25,40 35,30 50,30 Z"
+                  fill="#0c4a6e"
+                />
+                <circle cx="60" cy="45" r="3" fill="white" />
+                <path d="M40,55 C45,60 55,60 60,55" stroke="white" stroke-width="2" fill="none" />
+              </svg>
+              <span class="text-xl font-bold">Subnauticanimal</span>
+            </div>
+            <p class="text-sky-200 max-w-xs">
+              Découvrez et protégez la biodiversité aquatique française, de la métropole aux territoires d'outre-mer.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Navigation</h3>
+              <ul class="space-y-2">
+                <li><a href="#" class="text-sky-200 hover:text-white transition">Accueil</a></li>
+                <li><a href="html/Carte.html" class="text-sky-200 hover:text-white transition">Carte</a></li>
+                <li><a href="html/Espece.html" class="text-sky-200 hover:text-white transition">Espèces</a></li>
+                <li><a href="#about" class="text-sky-200 hover:text-white transition">À propos</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Ressources</h3>
+              <ul class="space-y-2">
+                <li><a href="#" class="text-sky-200 hover:text-white transition">Glossaire</a></li>
+                <li><a href="#" class="text-sky-200 hover:text-white transition">Publications</a></li>
+                <li><a href="#" class="text-sky-200 hover:text-white transition">Partenaires</a></li>
+              </ul>
+            </div>
+
+            <div class="col-span-2 md:col-span-1">
+              <h3 class="text-lg font-semibold mb-4">Contact</h3>
+              <ul class="space-y-2">
+                <li class="flex items-center">
+                  <svg
+                    class="w-5 h-5 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                  <a href="mailto:contact@subnauticanimal.fr" class="text-sky-200 hover:text-white transition"
+                    >contact@subnauticanimal.fr</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-sky-800 mt-8 pt-8 text-center text-sky-300 text-sm">
+          <p>&copy; 2025 Subnauticanimal. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/scriptProj1"></script>
+  </body>
+</html>
