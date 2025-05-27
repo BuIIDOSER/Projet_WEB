@@ -50,71 +50,45 @@
     <div class="container mx-auto py-10 px-4">
         <h1 class="text-4xl font-bold text-sky-900 mb-8 text-center">Carte des Écosystèmes Aquatiques</h1>
         
-        <!-- Section Métropole -->
+       <!-- Section Métropole -->
         <section id="metropole" class="mb-16">
             <h2 class="text-3xl font-bold text-sky-800 mb-6">France Métropolitaine</h2>
             
-            <div class="bg-white rounded-lg shadow-lg p-6">
-                <div class="mb-6">
-                    <p class="text-gray-700 mb-4">Explorez la biodiversité aquatique des différentes régions de France métropolitaine. Cliquez sur une région pour découvrir ses écosystèmes et espèces emblématiques.</p>
-                </div>
-                
-                <div class="flex flex-col md:flex-row">
-                    <div class="md:w-1/2 mb-6 md:mb-0">
-                        <!-- Map France SVG -->
-                        <div id="map-container" class="w-full">
-                            <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Hauts-de-France -->
-                                <path class="region" id="hauts-de-france" d="M300,100 L350,120 L380,150 L370,180 L330,200 L290,190 L270,160 L280,130 Z" data-name="Hauts-de-France"/>
-                                
-                                <!-- Grand Est -->
-                                <path class="region" id="grand-est" d="M380,150 L430,160 L450,200 L420,240 L380,230 L350,200 L370,180 Z" data-name="Grand Est"/>
-                                
-                                <!-- Normandie -->
-                                <path class="region" id="normandie" d="M220,150 L270,160 L290,190 L270,220 L230,210 L200,180 Z" data-name="Normandie"/>
-                                
-                                <!-- Île-de-France -->
-                                <path class="region" id="ile-de-france" d="M290,190 L330,200 L350,200 L330,230 L290,220 L270,220 Z" data-name="Île-de-France"/>
-                                
-                                <!-- Bretagne -->
-                                <path class="region" id="bretagne" d="M150,180 L200,180 L230,210 L210,240 L160,230 L130,200 Z" data-name="Bretagne"/>
-                                
-                                <!-- Pays de la Loire -->
-                                <path class="region" id="pays-de-loire" d="M210,240 L270,220 L290,220 L290,260 L250,280 L210,270 Z" data-name="Pays de la Loire"/>
-                                
-                                <!-- Centre-Val de Loire -->
-                                <path class="region" id="centre" d="M290,220 L330,230 L350,260 L330,290 L290,280 L290,260 Z" data-name="Centre-Val de Loire"/>
-                                
-                                <!-- Bourgogne-Franche-Comté -->
-                                <path class="region" id="bourgogne" d="M350,200 L380,230 L400,260 L380,290 L350,260 L330,230 Z" data-name="Bourgogne-Franche-Comté"/>
-                                
-                                <!-- Nouvelle-Aquitaine -->
-                                <path class="region" id="nouvelle-aquitaine" d="M210,270 L250,280 L290,280 L310,330 L270,380 L230,350 L200,300 Z" data-name="Nouvelle-Aquitaine"/>
-                                
-                                <!-- Auvergne-Rhône-Alpes -->
-                                <path class="region" id="auvergne" d="M330,290 L380,290 L410,320 L390,360 L350,340 L310,330 L290,280 Z" data-name="Auvergne-Rhône-Alpes"/>
-                                
-                                <!-- Occitanie -->
-                                <path class="region" id="occitanie" d="M270,380 L310,330 L350,340 L370,380 L340,410 L300,400 L260,410 Z" data-name="Occitanie"/>
-                                
-                                <!-- Provence-Alpes-Côte d'Azur -->
-                                <path class="region" id="paca" d="M390,360 L430,370 L440,400 L400,420 L370,380 L350,340 Z" data-name="Provence-Alpes-Côte d'Azur"/>
-                                
-                                <!-- Corse -->
-                                <path class="region" id="corse" d="M460,420 L470,450 L460,480 L440,460 L450,430 Z" data-name="Corse"/>
-                            </svg>
-                        </div>
-                    </div>
-                    
-                    <div class="md:w-1/2 md:pl-8">
-                        <div id="region-info" class="bg-sky-50 p-6 rounded-lg">
-                            <h3 class="text-2xl font-bold text-sky-800 mb-4">Sélectionnez une région</h3>
-                            <p class="text-gray-700">Cliquez sur une région de la carte pour découvrir sa biodiversité aquatique.</p>
-                        </div>
-                    </div>
+            <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row gap-6">
+
+            <!-- Carte SVG -->
+            <div class="relative w-full md:w-2/3 ml-[-150px] mt-[-20px]">
+                <svg viewBox="0 0 1541 790" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto rounded-lg">
+                <image href="../images_WEB/carte-france.png" width="1541" height="790" />
+
+                <!-- Rectangles cliquables -->
+                <rect x="750" y="80" width="100" height="100" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('hauts-de-france')" />
+                <rect x="870" y="150" width="180" height="130" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('grand-est')" />
+                <rect x="610" y="150" width="130" height="80" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('normandie')" />
+                <rect x="750" y="200" width="70" height="60" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('ile-de-france')" />
+                <rect x="470" y="190" width="110" height="90" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('bretagne')" />
+                <rect x="580" y="260" width="100" height="90" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('pays-de-la-loire')" />
+                <rect x="700" y="270" width="100" height="100" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('centre-val-de-loire')" />
+                <rect x="830" y="300" width="150" height="80" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('bourgogne-franche-comte')" />
+                <rect x="580" y="370" width="120" height="220" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('nouvelle-aquitaine')" />
+                <rect x="800" y="400" width="170" height="90" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('auvergne-rhone-alpes')" />
+                <rect x="700" y="500" width="140" height="130" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('occitanie')" />
+                <rect x="920" y="500" width="100" height="100" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('provence-alpes-cote-d-azur')" />
+                <rect x="1070" y="650" width="70" height="80" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('corse')" />
+                </svg>
+            </div>
+
+            <!-- Panneau d'infos -->
+            <div class="md:w-1/3">
+                <div id="region-info" class="bg-sky-50 p-6 rounded-lg shadow-md h-full">
+                <h3 class="text-2xl font-bold text-sky-800 mb-4">Sélectionnez une région</h3>
+                <p class="text-gray-700">Cliquez sur une région de la carte pour découvrir sa biodiversité aquatique.</p>
                 </div>
             </div>
+
+            </div> <!-- ← cette fermeture manquait -->
         </section>
+
         
         <!-- Section Outre-mer -->
         <section id="outremer">
@@ -185,7 +159,43 @@
                 <div class="outremer-card bg-white rounded-lg shadow-lg overflow-hidden">
                     <div class="flex items-center justify-center">
                         <img src="../images_WEB/polynesie.webp" alt="Polynésie française" class="h-full object-cover">
-                    </div>
+                    </div>        <section id="metropole" class="mb-16">
+            <h2 class="text-3xl font-bold text-sky-800 mb-6">France Métropolitaine</h2>
+            
+            <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row gap-6">
+
+            <!-- Carte SVG -->
+            <div class="relative w-full md:w-2/3">
+                <svg viewBox="0 0 1541 790" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto rounded-lg">
+                <image href="../images_WEB/carte-france.png" width="1541" height="790" />
+
+                <!-- Rectangles cliquables -->
+                <rect x="670" y="40" width="100" height="80" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('hauts-de-france')" />
+                <rect x="850" y="120" width="120" height="90" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('grand-est')" />
+                <rect x="590" y="110" width="90" height="80" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('normandie')" />
+                <rect x="720" y="170" width="70" height="60" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('ile-de-france')" />
+                <rect x="470" y="190" width="110" height="90" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('bretagne')" />
+                <rect x="600" y="240" width="90" height="70" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('pays-de-la-loire')" />
+                <rect x="710" y="240" width="80" height="70" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('centre-val-de-loire')" />
+                <rect x="810" y="230" width="100" height="80" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('bourgogne-franche-comte')" />
+                <rect x="580" y="340" width="120" height="120" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('nouvelle-aquitaine')" />
+                <rect x="770" y="330" width="120" height="90" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('auvergne-rhone-alpes')" />
+                <rect x="600" y="470" width="140" height="130" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('occitanie')" />
+                <rect x="870" y="460" width="100" height="100" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('provence-alpes-cote-d-azur')" />
+                <rect x="1220" y="630" width="70" height="80" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('corse')" />
+                </svg>
+            </div>
+
+            <!-- Panneau d'infos -->
+            <div class="md:w-1/3">
+                <div id="region-info" class="bg-sky-50 p-6 rounded-lg shadow-md h-full">
+                <h3 class="text-2xl font-bold text-sky-800 mb-4">Sélectionnez une région</h3>
+                <p class="text-gray-700">Cliquez sur une région de la carte pour découvrir sa biodiversité aquatique.</p>
+                </div>
+            </div>
+
+            </div> <!-- ← cette fermeture manquait -->
+        </section>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2 text-sky-800">Polynésie française</h3>
                         <p class="text-gray-700 mb-4">Archipel du Pacifique Sud avec des atolls, des lagons et une biodiversité marine parmi les plus riches au monde.</p>

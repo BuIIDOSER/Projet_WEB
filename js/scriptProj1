@@ -90,6 +90,36 @@ const regionData = {
     }
 };
 
+function showRegionInfo(regionId) {
+    const infoBox = document.getElementById("region-info");
+
+    const region = regionData[regionId];
+
+    if (!region) {
+        infoBox.innerHTML = `
+            <h3 class="text-2xl font-bold text-sky-800 mb-4">Région inconnue</h3>
+            <p class="text-gray-700">Aucune donnée disponible pour cette région.</p>
+        `;
+        return;
+    }
+
+    const ecosystemList = region.ecosystems.map(e => `<li>${e}</li>`).join("");
+    const speciesList = region.species.map(s => `<li>${s}</li>`).join("");
+
+    infoBox.innerHTML = `
+        <h3 class="text-2xl font-bold text-sky-800 mb-4">${region.name.toUpperCase()}</h3>
+        <p class="text-gray-700 mb-4">${region.description}</p>
+        <div class="mb-4">
+            <h4 class="text-sky-700 font-semibold mb-2">Écosystèmes :</h4>
+            <ul class="list-disc list-inside text-gray-700">${ecosystemList}</ul>
+        </div>
+        <div>
+            <h4 class="text-sky-700 font-semibold mb-2">Espèces emblématiques :</h4>
+            <ul class="list-disc list-inside text-gray-700">${speciesList}</ul>
+        </div>
+    `;
+}
+
 // Données des territoires d'outre-mer
 const outremerData = {
     "guadeloupe": {
