@@ -40,19 +40,19 @@ const regionData = {
         ecosystems: ["Océan Atlantique", "Manche", "Estuaires", "Rias"],
         species: ["Homard européen", "Lieu jaune", "Sardine", "Ormeaux"]
     },
-    "pays-de-loire": {
+    "pays-de-la-loire": {
         name: "Pays de la Loire",
         description: "Région traversée par la Loire et ses affluents, avec des zones humides importantes comme le Marais poitevin.",
         ecosystems: ["Estuaire de la Loire", "Marais", "Océan Atlantique", "Zones humides"],
         species: ["Anguille européenne", "Alose", "Lamproie marine", "Mulet"]
     },
-    "centre": {
+    "centre-val-de-loire": {
         name: "Centre-Val de Loire",
         description: "Région traversée par la Loire et ses affluents, avec de nombreux étangs notamment en Sologne.",
         ecosystems: ["Loire", "Étangs", "Zones humides"],
         species: ["Castor d'Europe", "Brochet", "Carpe", "Écrevisse à pattes blanches"]
     },
-    "bourgogne": {
+    "bourgogne-franche-comte": {
         name: "Bourgogne-Franche-Comté",
         description: "Région traversée par la Saône, avec de nombreux lacs, étangs et rivières.",
         ecosystems: ["Rivières", "Lacs", "Étangs"],
@@ -64,7 +64,7 @@ const regionData = {
         ecosystems: ["Océan Atlantique", "Estuaires", "Lacs côtiers", "Marais"],
         species: ["Bar", "Dorade royale", "Huître de Marennes-Oléron", "Lamproie"]
     },
-    "auvergne": {
+    "auvergne-rhone-alpes": {
         name: "Auvergne-Rhône-Alpes",
         description: "Région avec de nombreux lacs alpins, des rivières de montagne et le Rhône.",
         ecosystems: ["Lacs alpins", "Rivières de montagne", "Rhône"],
@@ -76,7 +76,7 @@ const regionData = {
         ecosystems: ["Mer Méditerranée", "Lagunes", "Rivières", "Étangs côtiers"],
         species: ["Loup", "Daurade", "Anguille", "Hippocampe moucheté"]
     },
-    "paca": {
+    "provence-alpes-cote-d-azur": {
         name: "Provence-Alpes-Côte d'Azur",
         description: "Région méditerranéenne avec un littoral varié, des calanques, des îles et une riche biodiversité marine.",
         ecosystems: ["Mer Méditerranée", "Calanques", "Îles", "Rivières alpines"],
