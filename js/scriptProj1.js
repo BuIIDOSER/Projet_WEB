@@ -258,3 +258,34 @@ function showOutremerInfo(territoryId) {
 document.getElementById('close-modal').addEventListener('click', function() {
     document.getElementById('outremer-modal').classList.add('hidden');
 });
+console.log("scriptProj1.js chargé"); // Pour vérifier que le fichier est bien chargé
+
+document.addEventListener('DOMContentLoaded', () => {
+      console.log("DOM prêt !");
+      fetch('../data/especes.json')
+        .then(response => {
+          if (!response.ok) throw new Error('JSON non trouvé !');
+          return response.json();
+        })
+        .then(data => {
+          console.log("JSON récupéré :", data);
+          afficherEspeces(data);
+        })
+        .catch(error => console.error('Erreur fetch :', error));
+    });
+
+    function afficherEspeces(especes) {
+      const tableBody = document.getElementById('species-table-body');
+      tableBody.innerHTML = '';
+      especes.forEach(espece => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${espece.nom}</td>
+          <td>${espece.groupe}</td>
+          <td>${espece.region}</td>
+          <td>${espece.habitat}</td>
+          <td>${espece.statut}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }

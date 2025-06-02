@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "nom": "Phoque moine de Méditerranée",
+    "groupe": "Mammifère marin",
+    "region": "Méditerranée",
+    "habitat": "Marin",
+    "statut": "En danger critique"
+  },
+  {
+    "id": 2,
+    "nom": "Mérou brun",
+    "groupe": "Poisson",
+    "region": "Méditerranée",
+    "habitat": "Marin",
+    "statut": "Vulnérable"
+  }
+]

@@ -49,6 +49,23 @@
     </header>
 
     <!-- Contenu de la page -->
+    <main class="container mx-auto py-10">
+    <h2 class="text-2xl font-semibold text-sky-800 mb-6">Tableau des espèces marines</h2>
+
+    <table class="min-w-full text-sm text-left text-gray-700 border border-gray-300">
+      <thead class="bg-sky-100">
+        <tr>
+          <th class="py-2 px-4 border">Nom</th>
+          <th class="py-2 px-4 border">Groupe</th>
+          <th class="py-2 px-4 border">Région</th>
+          <th class="py-2 px-4 border">Habitat</th>
+          <th class="py-2 px-4 border">Statut</th>
+        </tr>
+      </thead>
+      <tbody id="species-table-body"></tbody>
+    </table>
+  </main>
+
 
 
     <!-- Footer -->
@@ -104,7 +121,8 @@
         </div>
     </footer>
 
-    <script src="../js/scriptProj1"></script>
+    <script src="../js/scriptProj1.js"></script>
+
     
 </body>
 </html>
