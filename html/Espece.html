@@ -8,47 +8,102 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f0f9ff;
-        }
-        .wave-bg {
-            background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-        }
-        .card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .active-nav {
-            border-bottom: 3px solid #0ea5e9;
-        }
-        .species-table th {
-            position: sticky;
-            top: 0;
-            background-color: #0c4a6e;
-            z-index: 10;
-        }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            border-radius: 0.375rem;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .status-endangered {
-            background-color: #ef4444;
-        }
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <!-- Logo -->
+                <img src="../images_WEB/logo.jpg" alt="Logo Subnauticanimal" class="w-12 h-12">
+                <span class="text-2xl font-bold text-sky-600">Subnauticanimal</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="../index.html" class="text-sky-800 font-medium py-2">Accueil</a>
+                <div class="dropdown">
+                    <a href="#" class="text-sky-800 font-medium py-2 active-nav">Carte</a>
+                    <div class="dropdown-content">
+                        <a href="#metropole" class="block px-4 py-2 text-sky-800 hover:bg-sky-100">Métropole</a>
+                        <a href="#outremer" class="block px-4 py-2 text-sky-800 hover:bg-sky-100">Outre-mer</a>
+                    </div>
+                </div>
+                <a href="especes.html" class="text-sky-800 font-medium py-2">Espèces</a>
+                <a href="Quiz.html" class="text-sky-800 font-medium py-2">Quiz</a>
+                <a href="../index.html#about" class="text-sky-800 font-medium py-2">À propos</a>
+            </nav>
+            <button class="md:hidden focus:outline-none" id="menu-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sky-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        <div class="md:hidden hidden bg-white w-full" id="mobile-menu">
+            <div class="px-4 py-2 space-y-1">
+                <a href="../index.html" class="block py-2 text-sky-800 font-medium border-b border-gray-200">Accueil</a>
+                <a href="#" class="block py-2 text-sky-800 font-medium border-b border-gray-200">Carte</a>
+                <a href="especes.html" class="block py-2 text-sky-800 font-medium border-b border-gray-200">Espèces</a>
+                <a href="../index.html#about" class="block py-2 text-sky-800 font-medium">À propos</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenu de la page -->
+
+    
+    <!-- Footer -->
+    <footer class="bg-sky-900 text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="../images_WEB/logo.jpg" alt="Logo Subnauticanimal" class="w-12 h-12">
+                        <span class="text-xl font-bold">Subnauticanimal</span>
+                    </div>
+                    <p class="text-sky-200 max-w-xs">Découvrez et protégez la biodiversité aquatique française, de la métropole aux territoires d'outre-mer.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Navigation</h3>
+                        <ul class="space-y-2">
+                            <li><a href="../html/index.html" class="text-sky-200 hover:text-white transition">Accueil</a></li>
+                            <li><a href="#" class="text-sky-200 hover:text-white transition">Carte</a></li>
+                            <li><a href="especes.html" class="text-sky-200 hover:text-white transition">Espèces</a></li>
+                            <li><a href="../html/index.html#about" class="text-sky-200 hover:text-white transition">À propos</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Ressources</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-sky-200 hover:text-white transition">Glossaire</a></li>
+                            <li><a href="#" class="text-sky-200 hover:text-white transition">Publications</a></li>
+                            <li><a href="#" class="text-sky-200 hover:text-white transition">Partenaires</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-span-2 md:col-span-1">
+                        <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                <a href="mailto:contact@subnauticanimal.fr" class="text-sky-200 hover:text-white transition">contact@subnauticanimal.fr</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-sky-800 mt-8 pt-8 text-center text-sky-300 text-sm">
+                <p>&copy; 2025 Subnauticanimal. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/scriptProj1"></script>
+    
+</body>
+</html>
