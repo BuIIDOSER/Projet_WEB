@@ -290,3 +290,66 @@ document.addEventListener('DOMContentLoaded', () => {
         tableBody.appendChild(row);
       });
     }
+
+let essai = 1;
+
+function quizAlert() {
+    const fieldsetQuiz = document.querySelector(".quiz");
+    const submitBtn = document.getElementById("submitBtn");
+
+    // Affiche le quiz et le bouton
+    fieldsetQuiz.style.display = "block";
+    submitBtn.style.display = "inline-block";
+
+    // Optionnel : scroll vers le quiz
+    fieldsetQuiz.scrollIntoView({ behavior: "smooth" });
+}
+
+function submitQuiz() {
+    const nom = document.getElementById("nom").value.trim();
+    const prenom = document.getElementById("prenom").value.trim();
+    const mail = document.getElementById("mail").value.trim();
+
+    if (!nom || !prenom || !mail) {
+        alert("Merci de remplir vos informations personnelles avant d'envoyer le quiz.");
+        return;
+    }
+
+    let score = 0;
+
+    // Q1 : bonne réponse = a
+    const q1 = document.querySelector('input[name="q1"]:checked');
+    if (q1 && q1.value === 'a') score++;
+
+    // Q2 : bonnes réponses = a et b
+    const q2a = document.querySelector('input[name="q2"][value="a"]').checked;
+    const q2b = document.querySelector('input[name="q2"][value="b"]').checked;
+    const q2c = document.querySelector('input[name="q2"][value="c"]').checked;
+    if (q2a && q2b && !q2c) score++;
+
+    // Q3 : mot-clé présent = "sensibilisation"
+    const q3 = document.getElementById('q3').value.toLowerCase();
+    if (q3.includes("sensibilisation")) score++;
+
+    alert(`Votre score : ${score} / 3`);
+
+    // Mise à jour du tableau de résultats
+    const resultTable = document.querySelector("#result tbody");
+    const newRow = resultTable.insertRow();
+    newRow.insertCell(0).textContent = `Essai ${essai}`;
+    newRow.insertCell(1).textContent = `${score}/3`;
+    essai++;
+
+    // Affichage du score à l'écran
+    const scoreDisplay = document.getElementById("score-display");
+    scoreDisplay.textContent = `Bravo ${prenom} ! Vous avez obtenu ${score} point${score > 1 ? "s" : ""} sur 3.`;
+    scoreDisplay.style.display = "block";
+
+    // Réinitialisation
+    document.querySelector("#QuizId").reset();
+    document.querySelector(".quiz").style.display = "none";
+    document.getElementById("submitBtn").style.display = "none";
+
+    // Scroll vers le score
+    scoreDisplay.scrollIntoView({ behavior: "smooth" });
+}

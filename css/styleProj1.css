@@ -201,3 +201,68 @@ body {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+/* Champs de formulaire stylisés */
+.input-style {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.5rem;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 2px var(--shadow-light);
+}
+
+/* Boutons uniformisés */
+.quiz-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.quiz-button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Questions du quiz */
+.quiz p {
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-top: 1.5rem;
+}
+
+/* Table de résultats (tu peux ajuster selon ton tableau styled-table) */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px var(--shadow-light);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.styled-table th, .styled-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.styled-table th {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.styled-table tr:nth-child(even) {
+    background-color: #f9fafb;
+}

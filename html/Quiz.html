@@ -48,57 +48,58 @@
     </header>
 
     <!-- Contenu de la page -->
-    <form method="post" name="Quiz" action="#" class="box" id="QuizId" onsubmit="return false">
-        <fieldset id="informations">
-            <legend>Vos informations</legend>
+    <form method="post" name="Quiz" action="#" class="card" id="QuizId" onsubmit="return false">
+        <fieldset id="informations" class="card-content">
+            <legend class="card-title">Vos informations</legend>
 
             <label for="nom">Nom :</label>
-            <input type="text" id="nom" name="nom"><br>
+            <input type="text" id="nom" name="nom" class="input-style"><br>
 
             <label for="prenom">Prénom :</label>
-            <input type="text" id="prenom" name="prenom"><br>
+            <input type="text" id="prenom" name="prenom" class="input-style"><br>
 
             <label for="dateNaissance">Date de naissance :</label>
-            <input type="date" id="dateNaissance" name="dateNaissance"><br>
+            <input type="date" id="dateNaissance" name="dateNaissance" class="input-style"><br>
 
             <label for="mail">Adresse mail :</label>
-            <input type="email" id="mail" name="mail"><br>
+            <input type="email" id="mail" name="mail" class="input-style"><br>
 
             <label for="statut">Statut :</label>
-            <select id="statut" name="statut">
+            <select id="statut" name="statut" class="input-style">
                 <option>Choisissez un statut</option>
                 <option>Étudiant</option>
                 <option>Enseignant</option>
                 <option>Autre</option>
-            </select>
+            </select><br><br>
 
-            <!-- Bouton corrigé sans class .quiz -->
-            <input onclick="quizAlert()" type="button" value="Commencer le quiz">
+            <input onclick="quizAlert()" type="button" value="Commencer le quiz" class="quiz-button">
         </fieldset>
 
-        <fieldset class="quiz">
-            <legend>Quiz sur la Green IT</legend>
+        <fieldset class="card-content quiz">
+            <legend class="card-title">Quiz sur Subnauticanimal</legend>
 
-            <p>1. Qu’est-ce que la Green IT ?</p>
-            <label><input type="radio" name="q1" value="a"> Une pratique visant à réduire l’impact environnemental des technologies de l’information.</label><br>
-            <label><input type="radio" name="q1" value="b"> Un système de recyclage des anciennes ordinateurs.</label><br>
-            <label><input type="radio" name="q1" value="c"> Une méthode pour augmenter la consommation énergétique des serveurs.</label><br>
+            <p>1. Qu’est-ce que Subnauticanimal ?</p>
+            <label><input type="radio" name="q1" value="a"> Une initiative de sensibilisation à la biodiversité aquatique française.</label><br>
+            <label><input type="radio" name="q1" value="b"> Une association de protection des forêts tropicales.</label><br>
+            <label><input type="radio" name="q1" value="c"> Une méthode de nettoyage des plages.</label><br>
 
-            <p>2. Quel est l’objectif principal de la Green IT ?</p>
-            <label><input type="checkbox" name="q2" value="a"> Réduire la consommation d’énergie.</label><br>
-            <label><input type="checkbox" name="q2" value="b"> Minimiser les déchets électroniques.</label><br>
-            <label><input type="checkbox" name="q2" value="c"> Optimiser les performances des applications.</label><br>
+            <p>2. Quels écosystèmes sont étudiés par Subnauticanimal ?</p>
+            <label><input type="checkbox" name="q2" value="a"> Estuaires</label><br>
+            <label><input type="checkbox" name="q2" value="b"> Rias</label><br>
+            <label><input type="checkbox" name="q2" value="c"> Déserts</label><br>
 
-            <p>3. Donnez un exemple de pratique Green IT :</p>
-            <input type="text" id="q3" name="q3"><br><br>
+            <p>3. Quelle est la mission principale de Subnauticanimal ?</p>
+            <input type="text" id="q3" name="q3" class="input-style" placeholder="Votre réponse ici"><br><br>
 
-            <input type="submit" id="submitBtn" value="Envoyer" style="display: none;" onclick="submitQuiz()">
+            <input type="submit" id="submitBtn" value="Envoyer" class="quiz-button" onclick="submitQuiz()">
         </fieldset>
     </form>
 
-    <main class="box">
+    <main class="container">
+        <div id="score-display" style="display: none; text-align: center; margin: 1rem 0; font-weight: bold; font-size: 1.25rem; color: var(--secondary-color);">
+        </div>
         <table id="result" class="styled-table">
-            <caption>Résultats du quiz</caption>
+            <caption class="section-title">Résultats du quiz</caption>
             <thead>
                 <tr>
                     <th>Essai</th>
