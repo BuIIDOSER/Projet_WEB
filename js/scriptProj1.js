@@ -258,6 +258,7 @@ function showOutremerInfo(territoryId) {
 document.getElementById('close-modal').addEventListener('click', function() {
     document.getElementById('outremer-modal').classList.add('hidden');
 });
+
 console.log("scriptProj1.js chargé"); // Pour vérifier que le fichier est bien chargé
 
 document.addEventListener('DOMContentLoaded', () => {
