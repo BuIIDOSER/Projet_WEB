@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subnauticanimal - Quiz</title>
+    <link rel="stylesheet" href="../css/styleProj1.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <!-- Logo -->
+                <img src="../images_WEB/logo.jpg" alt="Logo Subnauticanimal" class="w-12 h-12">
+                <span class="text-2xl font-bold text-sky-600">Subnauticanimal</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="../index.html" class="text-sky-800 font-medium py-2">Accueil</a>
+                <div class="dropdown">
+                    <a href="#" class="text-sky-800 font-medium py-2 active-nav">Carte</a>
+                    <div class="dropdown-content">
+                        <a href="#metropole" class="block px-4 py-2 text-sky-800 hover:bg-sky-100">Métropole</a>
+                        <a href="#outremer" class="block px-4 py-2 text-sky-800 hover:bg-sky-100">Outre-mer</a>
+                    </div>
+                </div>
+                <a href="especes.html" class="text-sky-800 font-medium py-2">Espèces</a>
+                <a href="Quiz.html" class="text-sky-800 font-medium py-2">Quiz</a>
+                <a href="../index.html#about" class="text-sky-800 font-medium py-2">À propos</a>
+            </nav>
+            <button class="md:hidden focus:outline-none" id="menu-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sky-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        <div class="md:hidden hidden bg-white w-full" id="mobile-menu">
+            <div class="px-4 py-2 space-y-1">
+                <a href="../index.html" class="block py-2 text-sky-800 font-medium border-b border-gray-200">Accueil</a>
+                <a href="#" class="block py-2 text-sky-800 font-medium border-b border-gray-200">Carte</a>
+                <a href="especes.html" class="block py-2 text-sky-800 font-medium border-b border-gray-200">Espèces</a>
+                <a href="../index.html#about" class="block py-2 text-sky-800 font-medium">À propos</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenu de la page -->
+    <div class="container mx-auto py-10 px-4">
+        <h1 class="text-4xl font-bold text-sky-900 mb-8 text-center">Carte des Écosystèmes Aquatiques</h1>
+        
+       <!-- Section Métropole -->
+        <section id="metropole" class="mb-16">
+            <h2 class="text-3xl font-bold text-sky-800 mb-6">France Métropolitaine</h2>
+            
+            <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row gap-6">
+
+            <!-- Carte SVG -->
+            <div class="relative w-full md:w-2/3 ml-[-150px] mt-[-20px]">
+                <svg viewBox="0 0 1541 790" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto rounded-lg">
+                <image href="../images_WEB/carte-france.png" width="1541" height="790" />
+
+                <!-- Rectangles cliquables -->
+                <rect x="750" y="80" width="100" height="100" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('hauts-de-france')" />
+                <rect x="870" y="150" width="180" height="130" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('grand-est')" />
+                <rect x="610" y="150" width="130" height="80" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('normandie')" />
+                <rect x="750" y="200" width="70" height="60" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('ile-de-france')" />
+                <rect x="470" y="190" width="110" height="90" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('bretagne')" />
+                <rect x="580" y="260" width="100" height="90" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('pays-de-la-loire')" />
+                <rect x="700" y="270" width="100" height="100" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('centre-val-de-loire')" />
+                <rect x="830" y="300" width="150" height="80" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('bourgogne-franche-comte')" />
+                <rect x="580" y="370" width="120" height="220" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('nouvelle-aquitaine')" />
+                <rect x="800" y="400" width="170" height="90" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('auvergne-rhone-alpes')" />
+                <rect x="700" y="500" width="140" height="130" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('occitanie')" />
+                <rect x="920" y="500" width="100" height="100" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('provence-alpes-cote-d-azur')" />
+                <rect x="1070" y="650" width="70" height="80" fill="transparent" class="cursor-pointer" onclick="showRegionInfo('corse')" />
+                </svg>
+            </div>
+
+            <!-- Panneau d'infos -->
+            <div class="md:w-1/3">
+                <div id="region-info" class="bg-sky-50 p-6 rounded-lg shadow-md h-full">
+                <h3 class="text-2xl font-bold text-sky-800 mb-4">Sélectionnez une région</h3>
+                <p class="text-gray-700">Cliquez sur une région de la carte pour découvrir sa biodiversité aquatique.</p>
+                </div>
+            </div>
+
+            </div> <!-- ← cette fermeture manquait -->
+        </section>
+
+        
+        <!-- Section Outre-mer -->
+        <section id="outremer">
+            <h2 class="text-3xl font-bold text-sky-800 mb-6">Territoires d'Outre-mer</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Guadeloupe -->
+                <div class="outremer-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="flex items-center justify-center">
+                        <img src="../images_WEB/guadeloupe.jpg" alt="Guadeloupe" class="h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-sky-800">Guadeloupe</h3>
+                        <p class="text-gray-700 mb-4">Archipel des Caraïbes abritant des récifs coralliens, des mangroves et une biodiversité marine exceptionnelle.</p>
+                        <button class="text-sky-600 font-medium hover:text-sky-800" onclick="showOutremerInfo('guadeloupe')">En savoir plus →</button>
+                    </div>
+                </div>
+
+                <!-- Martinique -->
+                <div class="outremer-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="flex items-center justify-center">
+                        <img src="../images_WEB/martinique.jpg" alt="Martinique" class="h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-sky-800">Martinique</h3>
+                        <p class="text-gray-700 mb-4">Île volcanique des Caraïbes avec des écosystèmes marins diversifiés et des espèces endémiques.</p>
+                        <button class="text-sky-600 font-medium hover:text-sky-800" onclick="showOutremerInfo('martinique')">En savoir plus →</button>
+                    </div>
+                </div>
+
+                <!-- Guyane -->
+                <div class="outremer-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="flex items-center justify-center">
+                        <img src="../images_WEB/guyane.jpg" alt="Guyane" class="h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-sky-800">Guyane</h3>
+                        <p class="text-gray-700 mb-4">Territoire d'Amérique du Sud avec une riche biodiversité d'eau douce et des écosystèmes côtiers uniques.</p>
+                        <button class="text-sky-600 font-medium hover:text-sky-800" onclick="showOutremerInfo('guyane')">En savoir plus →</button>
+                    </div>
+                </div>
+
+                <!-- La Réunion -->
+                <div class="outremer-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="flex items-center justify-center">
+                        <img src="../images_WEB/reunion.jpg" alt="La Réunion" class="h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-sky-800">La Réunion</h3>
+                        <p class="text-gray-700 mb-4">Île de l'océan Indien avec des récifs coralliens, des lagons et une faune marine diversifiée.</p>
+                        <button class="text-sky-600 font-medium hover:text-sky-800" onclick="showOutremerInfo('reunion')">En savoir plus →</button>
+                    </div>
+                </div>
+
+                <!-- Mayotte -->
+                <div class="outremer-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="flex items-center justify-center">
+                        <img src="../images_WEB/mayotte.png" alt="Mayotte" class="h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-sky-800">Mayotte</h3>
+                        <p class="text-gray-700 mb-4">Île de l'archipel des Comores abritant l'un des plus grands lagons fermés du monde et une biodiversité marine exceptionnelle.</p>
+                        <button class="text-sky-600 font-medium hover:text-sky-800" onclick="showOutremerInfo('mayotte')">En savoir plus →</button>
+                    </div>
+                </div>
+
+                <!-- Polynésie française -->
+                <div class="outremer-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="flex items-center justify-center">
+                        <img src="../images_WEB/polynesie.webp" alt="Polynésie française" class="h-full object-cover">
+                    </div> 
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-sky-800">Polynésie française</h3>
+                        <p class="text-gray-700 mb-4">Archipel du Pacifique Sud avec des atolls, des lagons et une biodiversité marine parmi les plus riches au monde.</p>
+                        <button class="text-sky-600 font-medium hover:text-sky-800" onclick="showOutremerInfo('polynesie')">En savoir plus →</button>
+                    </div>
+                </div>    
+            </div>
+        </section>
+        
+        <!-- Modale pour Info Outremer -->
+        <div id="outremer-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+            <div class="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 id="modal-title" class="text-2xl font-bold text-sky-800"></h3>
+                        <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="modal-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-sky-900 text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="../images_WEB/logo.jpg" alt="Logo Subnauticanimal" class="w-12 h-12">
+                        <span class="text-xl font-bold">Subnauticanimal</span>
+                    </div>
+                    <p class="text-sky-200 max-w-xs">Découvrez et protégez la biodiversité aquatique française, de la métropole aux territoires d'outre-mer.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Navigation</h3>
+                        <ul class="space-y-2">
+                            <li><a href="../html/index.html" class="text-sky-200 hover:text-white transition">Accueil</a></li>
+                            <li><a href="#" class="text-sky-200 hover:text-white transition">Carte</a></li>
+                            <li><a href="especes.html" class="text-sky-200 hover:text-white transition">Espèces</a></li>
+                            <li><a href="../html/index.html#about" class="text-sky-200 hover:text-white transition">À propos</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Ressources</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-sky-200 hover:text-white transition">Glossaire</a></li>
+                            <li><a href="#" class="text-sky-200 hover:text-white transition">Publications</a></li>
+                            <li><a href="#" class="text-sky-200 hover:text-white transition">Partenaires</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-span-2 md:col-span-1">
+                        <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                <a href="mailto:contact@subnauticanimal.fr" class="text-sky-200 hover:text-white transition">contact@subnauticanimal.fr</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-sky-800 mt-8 pt-8 text-center text-sky-300 text-sm">
+                <p>&copy; 2025 Subnauticanimal. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/scriptProj1"></script>
+    
+</body>
+</html>
